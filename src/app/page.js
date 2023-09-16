@@ -15,7 +15,8 @@ export default function Home() {
               Hola!
             </h1>
             <p className="text-slate-500 text-lg tracking-tight">
-              Hi, My name is Ibrahim. I'm a frontend dev, based in Pakistan.
+              Hi, My name is Ibrahim. I&apos;m a frontend dev, based in
+              Pakistan.
             </p>
           </div>
           <div className="flex gap-2">
@@ -40,7 +41,8 @@ export default function Home() {
               Hola!
             </h1>
             <p className="text-slate-500 text-lg tracking-tight">
-              Hi, My name is Ibrahim. I'm a frontend dev, based in Pakistan.
+              Hi, My name is Ibrahim. I&apos;m a frontend dev, based in
+              Pakistan.
             </p>
           </div>
           <div className="flex gap-2">
