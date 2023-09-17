@@ -46,6 +46,15 @@ body {
   height: calc(100vh - 60px);
   margin: 30px;
 }
+.neu-body-no-bg {
+  border-radius: 50px;
+  /* background: linear-gradient(145deg, #9ed6d0, #bbfff7); */
+  box-shadow: 11px 11px 15px #80aea9, -11px -11px 15px #ffffff;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  height: calc(100vh - 60px);
+  margin: 30px;
+}
 
 .neu-body::-webkit-scrollbar {
   display: none; /* Safari and Chrome */
