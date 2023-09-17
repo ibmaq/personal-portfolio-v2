@@ -1,9 +1,21 @@
 "use client";
+import { useCursorContext } from "../CursorContext";
 
 export default function Button({ ...props }) {
-  console.log("props", props.text);
+  const { setCursorAnimType } = useCursorContext();
+  const expandCursor = (e) => {
+    e.preventDefault();
+
+    setCursorAnimType("fillInner");
+  };
+  const defaultCursor = (e) => {
+    e.preventDefault();
+    setCursorAnimType("default");
+  };
   return (
     <button
+      onMouseEnter={expandCursor}
+      onMouseLeave={defaultCursor}
       className={`font-medium rounded-lg ${
         props.type === "primary"
           ? "bg-black border text-white"
@@ -16,7 +28,7 @@ export default function Button({ ...props }) {
           : props.size === "medium"
           ? "px-5 py-2"
           : "px-4 py-1"
-      }`}
+      } cursor-none ${props.class && props.class}`}
     >
       {props.text}
     </button>
