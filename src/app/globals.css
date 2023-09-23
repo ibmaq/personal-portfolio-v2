@@ -2,9 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
+/* * {
   cursor: none;
-}
+} */
 
 /* :root {
   --foreground-rgb: 0, 0, 0;
@@ -37,25 +37,29 @@ body {
     rgb(var(--background-start-rgb)); */
 }
 
-.neu-body {
-  border-radius: 50px;
-  background: linear-gradient(145deg, #9ed6d0, #bbfff7);
-  box-shadow: 11px 11px 15px #80aea9, -11px -11px 15px #ffffff;
-  overflow-y: scroll;
-  scrollbar-width: none;
-  height: calc(100vh - 60px);
-  margin: 30px;
-}
-.neu-body-no-bg {
-  border-radius: 50px;
-  /* background: linear-gradient(145deg, #9ed6d0, #bbfff7); */
-  box-shadow: 11px 11px 15px #80aea9, -11px -11px 15px #ffffff;
-  overflow-y: scroll;
-  scrollbar-width: none;
-  height: calc(100vh - 60px);
-  margin: 30px;
+::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
 }
 
-.neu-body::-webkit-scrollbar {
-  display: none; /* Safari and Chrome */
+.masonry-container {
+  display: flex;
+  flex-flow: column wrap;
+  align-content: space-between;
+  /* height: 560px; */
+  width: 50%;
+  counter-reset: items;
+}
+
+/* Re-order items into 3 rows */
+.masonry-item:nth-of-type(4n + 1) {
+  order: 1;
+}
+.masonry-item:nth-of-type(4n + 2) {
+  order: 2;
+}
+.masonry-item:nth-of-type(4n + 3) {
+  order: 3;
+}
+.masonry-item:nth-of-type(4n) {
+  order: 4;
 }

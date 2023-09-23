@@ -11,34 +11,37 @@ export default function Projects() {
     cardID: -1,
     pillID: -1,
   });
-  const projectsData = [
+  const skillsData = [
     {
-      id: 0,
-      title: "NCR",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      image: "/pfp.jpg",
-      stack: ["next", "typescript", "MUI"],
+      category: "Frontend",
+      skills: [
+        "React.js + Next.js",
+        "Vue.js + Nuxt.js",
+        "HTML5 + CSS3 + JS",
+        "Tailwind CSS",
+        "Bootstrap",
+        "Material UI",
+      ],
     },
     {
-      id: 1,
-      title: "AEvent",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      image: "/pfp.jpg",
-      stack: ["vue", "nuxt"],
+      category: "Backend",
+      skills: ["Node.js", "Express.js", "MongoDB"],
     },
     {
-      id: 2,
-      title: "Workplace Solutions",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      image: "/pfp.jpg",
-      stack: ["react", "vue", "next"],
+      category: "Cloud Services",
+      skills: ["AWS (Amazon Web Services)", "Firebase/Google Cloud Platform"],
     },
     {
-      id: 3,
-      title: "RMS",
-      description: "description",
-      image: "/pfp.jpg",
-      stack: ["react", "vue", "next"],
+      category: "Additional Skills",
+      skills: ["Redux Toolkit", "Figma", "SEO principles", "Web3"],
+    },
+    {
+      category: "Version Control",
+      skills: ["Git"],
+    },
+    {
+      category: "API Development",
+      skills: ["REST APIs"],
     },
   ];
   const [selectedProjectId, setSelectedProjectId] = useState(-1);
@@ -55,10 +58,38 @@ export default function Projects() {
     <section className="col-span-1 row-span-3 items-center overflow-auto">
       <div className="flex flex-col">
         <h1 className="text-black font-bold lg:text-4xl text-3xl tracking-tighter sticky top-0 z-10 bg-white p-4 pt-6">
-          Projects
+          Skills
         </h1>
-        <ul className="flex flex-col gap-4 p-4 pt-2">
-          {projectsData.map((item, idx) => {
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 pt-2 h-fit max-h-fit">
+          {skillsData.map((item, idx) => {
+            return (
+              <div
+                key={idx}
+                className="text-black border border-transparent hover:border-black/30 rounded-lg p-4 shadow-md hover:shadow-none transition-all ease-in-out duration-300"
+              >
+                <h2 className="font-bold">{item.category}</h2>
+                <ul className="list-disc list-outside">
+                  {item.skills.map((skill, index) => (
+                    <li key={index} className="ml-4">
+                      {skill}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            );
+          })}
+        </div>
+        {/* <ul className="flex flex-col gap-4 p-4 pt-2">
+          {skillsData.map((item, idx) => {
+            return (
+              <li key={idx} className="text-black">
+                {item.category}
+              </li>
+            );
+          })}
+        </ul> */}
+        {/* <ul className="flex flex-col gap-4 p-4 pt-2">
+          {skillsData.map((item, idx) => {
             return (
               <li
                 layoutId={item.id}
@@ -105,7 +136,6 @@ export default function Projects() {
                   <p className="text-slate-500 text-sm tracking-tight">
                     {item.description}
                   </p>
-                  {/* stack used */}
                   <div className="border-y border-black/5 w-full py-2">
                     <ul className="flex gap-2">
                       {item.stack.map((stack, idx) => {
@@ -145,12 +175,10 @@ export default function Projects() {
                     </ul>
                   </div>
                 </div>
-                {/* Button */}
-                {/* className="absolute px-1.5 pt-1 pb-2 -top-3 right-2 rounded-lg text-md bg-black text-white" */}
               </li>
             );
           })}
-        </ul>
+        </ul> */}
       </div>
     </section>
   );

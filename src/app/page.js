@@ -3,56 +3,62 @@ import Image from "next/image";
 import TopNav from "./Components/TopNav";
 import Button from "./Components/Button";
 import Cursor from "./Components/Cursor";
-import TextPlate from "./Components/TextPlate";
+import Experience from "./Components/Sections/Experience";
+import Skills from "./Components/Sections/Skills";
 import Projects from "./Components/Sections/Projects";
 
 export default function Home() {
   return (
-    <main className="neu-body">
-      <TopNav />
-      {/* Intro */}
-      <section
-        className="flex items-center w-full max-w-7xl mx-auto lg:px-24 md:px-12 px-8 py-24"
-        id="about"
-      >
-        <div className="w-1/2 flex flex-col gap-10">
-          <TextPlate
-            heading="Hola!"
-            content="Hi, My name is Ibrahim. I'm a frontend dev, based in
-              Pakistan."
-            align="left"
-          />
-          <div className="flex gap-2">
-            <Button type="primary" size="large" text="Hire Me 👋" />
-            <Button
-              type="secondary"
-              size="large"
-              text="Check out my resume 👉"
-            />
+    <main className="bg-white ">
+      <div className="grid grid-cols-4 grid-rows-5 h-screen divide-x divide-y">
+        {/* Main Grid - Row 1 */}
+        <section
+          className="col-span-2 row-span-1 grid items-center p-4"
+          id="about"
+        >
+          <div className="flex flex-col gap-4">
+            <h1 className="text-black font-extrabold text-7xl/none tracking-tighter w-fit">
+              Muhammad Ibrahim
+            </h1>
+            <p className="text-slate-500 leading-none">
+              Hi, My name is Ibrahim. I'm a frontend dev, based in Pakistan.
+            </p>
+          </div>
+        </section>
+        <section
+          className="col-span-1 row-span-1 grid items-center p-4"
+          id="about"
+        >
+          <ul className="text-slate-500 text-md">
+            <li>ibrahimaq99@gmail.com</li>
+            <li>+92 312 3996083</li>
+            <li>linkedin.com/in/ibrahimqureshi99</li>
+            <li>muhmmadibrahim.com</li>
+          </ul>
+        </section>
+        <section
+          className="col-span-1 row-span-1 grid items-center p-4"
+          id="about"
+        >
+          <ul className="text-slate-500 text-md">
+            <li>ibrahimaq99@gmail.com</li>
+            <li>+92 312 3996083</li>
+            <li>linkedin.com/in/ibrahimqureshi99</li>
+            <li>muhmmadibrahim.com</li>
+          </ul>
+        </section>
+        {/* Main Grid - Row 2 - Internal Grid */}
+        <div className="col-span-4 row-span-4 grid grid-cols-1 grid-rows-6">
+          <div className="col-span-4 row-span-5 grid grid-cols-3 grid-rows-1 divide-x border-b">
+            <Experience />
+            <Skills />
+            <Projects />
           </div>
         </div>
-        <Image
-          src="/pfp.jpg"
-          alt="Vercel Logo"
-          className="rounded-lg ml-auto"
-          width={400}
-          height={400}
-          priority
-        />
-      </section>
-      {/* Projects */}
-      <section className="flex flex-col gap-10 items-center w-full max-w-7xl mx-auto lg:px-24 md:px-12 px-8 py-24">
-        <TextPlate
-          heading="Projects"
-          content="Here are some of my prominent works."
-          align="center"
-        />
+      </div>
 
-        {/* masonry card layout with images, headings, small text and view details buttons */}
-        <Projects />
-      </section>
       {/* animated-cursor */}
-      <Cursor />
+      {/* <Cursor /> */}
     </main>
   );
 }
