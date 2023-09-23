@@ -8,7 +8,7 @@ import Projects from "./Components/Sections/Projects";
 
 export default function Home() {
   return (
-    <main className="neu-body">
+    <main>
       <TopNav />
       {/* Intro */}
       <section
