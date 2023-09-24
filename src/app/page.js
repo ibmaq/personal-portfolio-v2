@@ -10,7 +10,7 @@ export default function Home() {
   let year = new Date().getFullYear();
   return (
     <main className="">
-      <div className="grid grid-cols-1 grid-rows-auto md:grid-cols-5 lg:grid-cols-4 md:grid-rows-5 lg:grid-rows-4 h-screen divide-x divide-y">
+      <div className="grid grid-cols-1 grid-rows-auto md:grid-cols-5 lg:grid-cols-4 md:grid-rows-5 h-screen divide-x divide-y">
         {/* Main Grid - Row 1 */}
         <section
           className="col-span-1 row-span-1 md:col-span-3 md:row-span-1 grid items-center p-4"
