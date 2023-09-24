@@ -5,7 +5,7 @@ import Button from "../Button";
 import { useState } from "react";
 import { useCursorContext } from "@/app/CursorContext";
 
-export default function Projects() {
+export default function Skills() {
   const [cardHoverID, setCardHoverID] = useState(-1);
   const [stackHover, setStackHover] = useState({
     cardID: -1,
@@ -55,7 +55,7 @@ export default function Projects() {
     setCursorAnimType("default");
   };
   return (
-    <section className="col-span-1 row-span-3 items-center overflow-auto">
+    <section className="md:col-span-1 md:row-span-3 items-center md:overflow-auto">
       <div className="flex flex-col">
         <h1 className="text-black font-bold lg:text-4xl text-3xl tracking-tighter sticky top-0 z-10 bg-white p-4 pt-6">
           Skills

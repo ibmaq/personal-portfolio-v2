@@ -4,6 +4,7 @@ import Image from "next/image";
 import Button from "../Button";
 import { useState } from "react";
 import { useCursorContext } from "@/app/CursorContext";
+import Link from "next/link";
 
 export default function Projects() {
   const [cardHoverID, setCardHoverID] = useState(-1);
@@ -14,32 +15,46 @@ export default function Projects() {
   const projectsData = [
     {
       id: 0,
-      title: "NCR",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      title: "WordPress Projects",
+      description:
+        "Crafted over 50 WordPress websites with finesse, leveraging top-notch page builders like Elementor Pro, WPBakery, and Divi. Each project showcases my expertise in creating captivating and highly functional WordPress experiences.",
       image: "/pfp.jpg",
-      stack: ["next", "typescript", "MUI"],
+      stack: ["wordpress"],
+      link: "/projects",
     },
-    {
-      id: 1,
-      title: "AEvent",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      image: "/pfp.jpg",
-      stack: ["vue", "nuxt"],
-    },
+    // {
+    //   id: 1,
+    //   title: "NCR",
+    //   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    //   image: "/pfp.jpg",
+    //   stack: ["next", "typescript", "MUI"],
+    //   link: "https://www.ncr.com/",
+    // },
     {
       id: 2,
-      title: "Workplace Solutions",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      title: "AEvent - Webinar Automation Application",
+      description:
+        "AEvent is an event and communications automation platform for professionals and businesses organizing online events, running digital marketing campaigns, and sharing training sessions",
       image: "/pfp.jpg",
-      stack: ["react", "vue", "next"],
+      stack: ["vue", "nuxt"],
+      link: "https://aevent.com/",
     },
-    {
-      id: 3,
-      title: "RMS",
-      description: "description",
-      image: "/pfp.jpg",
-      stack: ["react", "vue", "next"],
-    },
+    // {
+    //   id: 3,
+    //   title: "Workplace Solutions",
+    //   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    //   image: "/pfp.jpg",
+    //   stack: ["react", "vue", "next"],
+    //   link: "#",
+    // },
+    // {
+    //   id: 4,
+    //   title: "RMS",
+    //   description: "description",
+    //   image: "/pfp.jpg",
+    //   stack: ["react", "vue", "next"],
+    //   link: "#",
+    // },
   ];
   const [selectedProjectId, setSelectedProjectId] = useState(-1);
   const { setCursorAnimType } = useCursorContext();
@@ -63,9 +78,9 @@ export default function Projects() {
               <li
                 layoutId={item.id}
                 className={`border relative bg-white rounded-lg ${
-                  cardHoverID === item.id
-                    ? "scale-[1.02] shadow-xl"
-                    : "scale-100"
+                  cardHoverID === item.id && "scale-[1.02] shadow-lg"
+                } ${
+                  cardHoverID !== item.id && cardHoverID !== -1 && "blur-[1px]"
                 } transition-all ease-in-out duration-300`}
                 key={idx}
                 onPointerEnter={() => setCardHoverID(item.id)}
@@ -76,31 +91,28 @@ export default function Projects() {
                     <h1 className="text-black font-extrabold text-2xl tracking-tighter w-fit">
                       {item.title}
                     </h1>
-                    <div
-                      className="h-8 w-8"
-                      onClick={() =>
-                        setSelectedProjectId(
-                          selectedProjectId === item.id ? null : item.id
-                        )
-                      }
-                      onMouseEnter={expandCursor}
-                      onMouseLeave={defaultCursor}
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                        className="inline-block shrink-0 transition-transform rotate-45 hover:rotate-0"
-                        //   class="inline-block h-8 w-8 shrink-0 transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1 group-focus-visible/link:-translate-y-1 group-focus-visible/link:translate-x-1 motion-reduce:transition-none ml-1 translate-y-px"
-                        aria-hidden="true"
+                    <Link href={item.link} target="_blank">
+                      <div
+                        className="h-8 w-8"
+                        onMouseEnter={expandCursor}
+                        onMouseLeave={defaultCursor}
                       >
-                        <path
-                          fill-rule="evenodd"
-                          d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
-                          clip-rule="evenodd"
-                        ></path>
-                      </svg>
-                    </div>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                          className="inline-block shrink-0 transition-transform rotate-45 hover:rotate-0"
+                          //   class="inline-block h-8 w-8 shrink-0 transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1 group-focus-visible/link:-translate-y-1 group-focus-visible/link:translate-x-1 motion-reduce:transition-none ml-1 translate-y-px"
+                          aria-hidden="true"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
+                            clip-rule="evenodd"
+                          ></path>
+                        </svg>
+                      </div>
+                    </Link>
                   </div>
                   <p className="text-slate-500 text-sm tracking-tight">
                     {item.description}

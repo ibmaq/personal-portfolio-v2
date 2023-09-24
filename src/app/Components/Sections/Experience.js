@@ -5,7 +5,7 @@ import Button from "../Button";
 import { useState } from "react";
 import { useCursorContext } from "@/app/CursorContext";
 
-export default function Projects() {
+export default function Experience() {
   const [cardHoverID, setCardHoverID] = useState(-1);
   const [stackHover, setStackHover] = useState({
     cardID: -1,
@@ -73,7 +73,7 @@ export default function Projects() {
     setCursorAnimType("default");
   };
   return (
-    <section className="col-span-1 row-span-3 items-center overflow-auto">
+    <section className="md:col-span-1 md:row-span-3 items-center md:overflow-y-auto">
       <div className="flex flex-col">
         <h1 className="text-black font-bold lg:text-4xl text-3xl tracking-tighter sticky top-0 z-10 bg-white p-4 pt-6">
           Experience
@@ -153,47 +153,6 @@ export default function Projects() {
                       })}
                     </ul>
                   </div>
-                  {/* <p className="text-slate-500 text-sm tracking-tight">
-                    {item.description}
-                  </p>
-                  <div className="border-y border-black/5 w-full py-2">
-                    <ul className="flex gap-2">
-                      {item.stack.map((stack, idx) => {
-                        return (
-                          <li
-                            className={`text-black px-2 border rounded-full capitalize text-sm tracking-tight flex gap-1
-                          ${
-                            stackHover.cardID === item.id &&
-                            stackHover.pillID === idx
-                              ? "bg-sky-300"
-                              : "bg-sky-200"
-                          } transition-all ease-in-out duration-300 transform`}
-                            key={idx}
-                            onPointerEnter={() =>
-                              setStackHover({
-                                cardID: item.id,
-                                pillID: idx,
-                              })
-                            }
-                            onPointerLeave={() =>
-                              setStackHover({
-                                cardID: -1,
-                                pillID: -1,
-                              })
-                            }
-                          >
-                            <Image
-                              src={`/stack_icons/${stack}.svg`}
-                              alt="used_stack_icon"
-                              width={18}
-                              height={18}
-                            />
-                            {stack}
-                          </li>
-                        );
-                      })}
-                    </ul>
-                  </div> */}
                 </div>
               </li>
             );

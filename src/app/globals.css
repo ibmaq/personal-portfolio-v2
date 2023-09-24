@@ -2,9 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-/* * {
+* {
   cursor: none;
-} */
+}
 
 /* :root {
   --foreground-rgb: 0, 0, 0;
@@ -41,25 +41,65 @@ body {
   display: none; /* Safari and Chrome */
 }
 
-.masonry-container {
-  display: flex;
-  flex-flow: column wrap;
-  align-content: space-between;
-  /* height: 560px; */
-  width: 50%;
-  counter-reset: items;
+/* Dark mode toggle */
+.dark-toggle-switch {
+  position: relative;
+  width: 100px;
+  height: 35px;
+  --light: #ffffff;
+  --dark: #000000;
+  --link: rgb(27, 129, 112);
+  --link-hover: rgb(24, 94, 82);
 }
 
-/* Re-order items into 3 rows */
-.masonry-item:nth-of-type(4n + 1) {
-  order: 1;
+.dark-switch-label {
+  position: absolute;
+  width: 100%;
+  height: 35px;
+  background-color: var(--dark);
+  border-radius: 25px;
+  cursor: pointer;
+  border: 3px solid var(--dark);
 }
-.masonry-item:nth-of-type(4n + 2) {
-  order: 2;
+
+.dark-checkbox {
+  position: absolute;
+  display: none;
 }
-.masonry-item:nth-of-type(4n + 3) {
-  order: 3;
+
+.dark-slider {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
-.masonry-item:nth-of-type(4n) {
-  order: 4;
+
+.dark-checkbox:checked ~ .dark-slider {
+  background-color: var(--light);
+}
+
+.dark-slider::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 10px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  -webkit-box-shadow: inset 12px -4px 0px 0px var(--light);
+  box-shadow: inset 7px -4px 0px 0px var(--light);
+  background-color: var(--dark);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.dark-checkbox:checked ~ .dark-slider::before {
+  -webkit-transform: translateX(50px);
+  -ms-transform: translateX(50px);
+  transform: translateX(50px);
+  background-color: var(--dark);
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }

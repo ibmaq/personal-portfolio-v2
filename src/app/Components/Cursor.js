@@ -101,12 +101,12 @@ export default function Cursor() {
   return (
     <>
       <motion.div
-        className="fixed top-0 left-0 h-4 w-4 rounded-full border-2 border-black pointer-events-none"
+        className="hidden md:block fixed top-0 left-0 h-4 w-4 rounded-full border-2 border-black pointer-events-none z-50"
         variants={cursorVariants}
         animate={cursorAnimation}
       />
       <motion.div
-        className="fixed -top-3 -left-3 h-10 w-10 rounded-full border-2 border-slate-500  pointer-events-none"
+        className="hidden md:block fixed -top-3 -left-3 h-10 w-10 rounded-full border-2 border-slate-500  pointer-events-none z-50"
         variants={secondCursorVariants}
         animate={cursorAnimation}
       />
