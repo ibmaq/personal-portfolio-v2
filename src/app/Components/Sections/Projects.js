@@ -58,9 +58,9 @@ export default function Projects() {
   ];
   const [selectedProjectId, setSelectedProjectId] = useState(-1);
   const { setCursorAnimType } = useCursorContext();
-  const expandCursor = (e) => {
+  const expandInvertCursor = (e) => {
     e.preventDefault();
-    setCursorAnimType("expand");
+    setCursorAnimType("expandInvert");
   };
   const defaultCursor = (e) => {
     e.preventDefault();
@@ -76,7 +76,6 @@ export default function Projects() {
           {projectsData.map((item, idx) => {
             return (
               <li
-                layoutId={item.id}
                 className={`border relative bg-white rounded-lg ${
                   cardHoverID === item.id && "scale-[1.02] shadow-lg"
                 } ${
@@ -94,7 +93,7 @@ export default function Projects() {
                     <Link href={item.link} target="_blank">
                       <div
                         className="h-8 w-8"
-                        onMouseEnter={expandCursor}
+                        onMouseEnter={expandInvertCursor}
                         onMouseLeave={defaultCursor}
                       >
                         <svg

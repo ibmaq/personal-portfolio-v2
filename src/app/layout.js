@@ -5,7 +5,7 @@ import { CursorProvider } from "./CursorContext";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "My Portfolio",
+  title: "Muhammad Ibrahim",
   description: "Ibrahim - Frontend Developer",
 };
 

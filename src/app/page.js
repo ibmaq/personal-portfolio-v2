@@ -5,6 +5,7 @@ import Cursor from "./Components/Cursor";
 import Experience from "./Components/Sections/Experience";
 import Skills from "./Components/Sections/Skills";
 import Projects from "./Components/Sections/Projects";
+import Contact from "./Components/Sections/Contact";
 
 export default function Home() {
   let year = new Date().getFullYear();
@@ -21,7 +22,9 @@ export default function Home() {
           <div className="flex flex-col gap-4">
             <h1 className="hidden lg:block text-black font-extrabold text-4xl/none lg:text-7xl/none tracking-tighter w-fit">
               Hi, I'm{" "}
-              <span className="hover:animate-pulse">Muhammad Ibrahim</span>
+              <span className="hover:animate-pulse hover:drop-shadow-md">
+                Muhammad Ibrahim
+              </span>
               👋
             </h1>
             <h1 className="block lg:hidden text-black font-extrabold text-4xl/none tracking-tighter w-fit">
@@ -36,16 +39,7 @@ export default function Home() {
 
         {/* Main Grid - Row 2 - Tablet View */}
         <div className="col-span-1 row-span-1 md:col-span-1 md:flex md:flex-col md:gap-1 justify-center p-4">
-          <ul className="leading-5">
-            <li className="font-bold text-black">
-              <a href="/resume.pdf" download={true}>
-                👉 Download My Resume
-              </a>
-            </li>
-            <li>ibrahimaq99@gmail.com</li>
-            <li>+92 312 3996083</li>
-            <li>linkedin.com/in/ibrahimqureshi99</li>
-          </ul>
+          <Contact />
         </div>
 
         {/* Main Grid - Row 2 - Internal Grid */}

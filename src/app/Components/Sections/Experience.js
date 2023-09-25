@@ -82,7 +82,6 @@ export default function Experience() {
           {experienceData.map((item, idx) => {
             return (
               <li
-                layoutId={item.id}
                 className={`border hover:border-black/40 relative bg-white rounded-lg ${
                   cardHoverID === item.id
                     ? "scale-[1.02] shadow-md"

@@ -46,6 +46,19 @@ export default function Cursor() {
     expandInvert: {
       x: mousePos.x - 10,
       y: mousePos.y - 10,
+      scale: 0,
+      transition: { type: "linear", duration: 0.05 },
+
+      //   border: "3px solid #bae6fd",
+      //   backgroundColor: "#bae6fd",
+      //   mixBlendMode: "difference",
+    },
+    resume: {
+      x: mousePos.x - 10,
+      y: mousePos.y - 10,
+      scale: 0.3,
+      backgroundColor: "#000",
+      transition: { type: "linear", duration: 0.05 },
     },
   };
   const secondCursorVariants = {
@@ -71,9 +84,23 @@ export default function Cursor() {
       y: mousePos.y - 10,
       scale: 1.2,
       transition: { type: "linear", duration: 0.05 },
+    },
+    expandInvert: {
+      x: mousePos.x - 10,
+      y: mousePos.y - 10,
       border: "3px solid #bae6fd",
       backgroundColor: "#bae6fd",
       mixBlendMode: "difference",
+      transition: { type: "linear", duration: 0.05 },
+    },
+    resume: {
+      x: mousePos.x - 10,
+      y: mousePos.y - 10,
+      // border: "3px solid #000",
+      scale: 1,
+      // backgroundColor: "#fff",
+      // mixBlendMode: "difference",
+      transition: { type: "linear", duration: 0.05 },
     },
   };
   // const secondCursorVariants = {
