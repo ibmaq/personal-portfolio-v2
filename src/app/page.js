@@ -10,6 +10,7 @@ import Contact from "./Components/Sections/Contact";
 export default function Home() {
   let year = new Date().getFullYear();
   return (
+<<<<<<< HEAD
     <main className="">
       {/* <div className="grid lg:grid-cols-4 lg:h-screen divide-x divide-y"> */}
       <div className="grid lg:grid grid-cols-1 grid-rows-auto lg:grid-cols-4 lg:grid-rows-5 lg:h-screen divide-x divide-y text-slate-500 text-sm lg:text-base">
@@ -54,6 +55,29 @@ export default function Home() {
             <p className="text-md">
               {`Crafted with ❤️ and a whole lot of ☕️. Loosely designed on a sketchbook, developed with Next.js, Tailwind CSS, and VS Code. Deployed with Vercel. © Muhammad Ibrahim ${year} – All Rights Playful.`}
             </p>
+=======
+    <main>
+      <TopNav />
+      {/* Intro */}
+      <section
+        className="flex items-center w-full max-w-7xl mx-auto lg:px-24 md:px-12 px-8 py-24"
+        id="about"
+      >
+        <div className="w-1/2 flex flex-col gap-10">
+          <TextPlate
+            heading="Hola!"
+            content="Hi, My name is Ibrahim. I'm a frontend dev, based in
+              Pakistan."
+            align="left"
+          />
+          <div className="flex gap-2">
+            <Button type="primary" size="large" text="Hire Me 👋" />
+            <Button
+              type="secondary"
+              size="large"
+              text="Check out my resume 👉"
+            />
+>>>>>>> cc9d9abb7c4acf5be5b2b70274fdfea37bb63476
           </div>
         </div>
       </div>
