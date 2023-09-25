@@ -5,14 +5,14 @@ import { CursorProvider } from "./CursorContext";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "My Portfolio",
+  title: "Muhammad Ibrahim",
   description: "Ibrahim - Frontend Developer",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.className} bg-white dark:bg-black`}>
         <CursorProvider>{children}</CursorProvider>
       </body>
     </html>

@@ -46,6 +46,19 @@ export default function Cursor() {
     expandInvert: {
       x: mousePos.x - 10,
       y: mousePos.y - 10,
+      scale: 0,
+      transition: { type: "linear", duration: 0.05 },
+
+      //   border: "3px solid #bae6fd",
+      //   backgroundColor: "#bae6fd",
+      //   mixBlendMode: "difference",
+    },
+    resume: {
+      x: mousePos.x - 10,
+      y: mousePos.y - 10,
+      scale: 0.3,
+      backgroundColor: "#000",
+      transition: { type: "linear", duration: 0.05 },
     },
   };
   const secondCursorVariants = {
@@ -71,9 +84,23 @@ export default function Cursor() {
       y: mousePos.y - 10,
       scale: 1.2,
       transition: { type: "linear", duration: 0.05 },
+    },
+    expandInvert: {
+      x: mousePos.x - 10,
+      y: mousePos.y - 10,
       border: "3px solid #bae6fd",
       backgroundColor: "#bae6fd",
       mixBlendMode: "difference",
+      transition: { type: "linear", duration: 0.05 },
+    },
+    resume: {
+      x: mousePos.x - 10,
+      y: mousePos.y - 10,
+      // border: "3px solid #000",
+      scale: 1,
+      // backgroundColor: "#fff",
+      // mixBlendMode: "difference",
+      transition: { type: "linear", duration: 0.05 },
     },
   };
   // const secondCursorVariants = {
@@ -101,12 +128,12 @@ export default function Cursor() {
   return (
     <>
       <motion.div
-        className="fixed top-0 left-0 h-4 w-4 rounded-full border-2 border-black pointer-events-none"
+        className="hidden lg:block fixed top-0 left-0 h-4 w-4 rounded-full border-2 border-black pointer-events-none z-50"
         variants={cursorVariants}
         animate={cursorAnimation}
       />
       <motion.div
-        className="fixed -top-3 -left-3 h-10 w-10 rounded-full border-2 border-slate-500  pointer-events-none"
+        className="hidden lg:block fixed -top-3 -left-3 h-10 w-10 rounded-full border-2 border-slate-500  pointer-events-none z-50"
         variants={secondCursorVariants}
         animate={cursorAnimation}
       />
