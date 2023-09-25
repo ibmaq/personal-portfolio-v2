@@ -60,7 +60,7 @@ export default function Skills() {
         <h1 className="text-black font-bold lg:text-4xl text-3xl tracking-tighter sticky top-0 z-10 bg-white p-4 pt-6">
           Skills
         </h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 pt-2 h-fit max-h-fit">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-2 gap-4 p-4 pt-2 h-fit max-h-fit">
           {skillsData.map((item, idx) => {
             return (
               <div

@@ -73,12 +73,12 @@ export default function Experience() {
     setCursorAnimType("default");
   };
   return (
-    <section className="md:col-span-1 md:row-span-3 items-center md:overflow-y-auto">
+    <section className="md:col-span-1 md:row-span-3 items-center lg:overflow-y-auto text-slate-500">
       <div className="flex flex-col">
         <h1 className="text-black font-bold lg:text-4xl text-3xl tracking-tighter sticky top-0 z-10 bg-white p-4 pt-6">
           Experience
         </h1>
-        <ul className="flex flex-col gap-4 p-4 pt-2">
+        <ul className="flex flex-col md:flex-row md:flex-wrap lg:flex-nowrap lg:flex-col gap-4 p-4 pt-2">
           {experienceData.map((item, idx) => {
             return (
               <li
@@ -87,7 +87,7 @@ export default function Experience() {
                   cardHoverID === item.id
                     ? "scale-[1.02] shadow-md"
                     : "scale-100"
-                } transition-all ease-in-out duration-300`}
+                } transition-all ease-in-out duration-300 w-full md:w-[calc(50%-1rem)] lg:w-full`}
                 key={idx}
               >
                 {/* onPointerEnter={() => setCardHoverID(item.id)}
@@ -108,7 +108,7 @@ export default function Experience() {
                       </div>
                     </div>
                     <div
-                      className="h-8 w-8"
+                      className="h-8 w-8 md:hidden lg:block"
                       onClick={() =>
                         setCardHoverID(cardHoverID === item.id ? null : item.id)
                       }
@@ -133,9 +133,9 @@ export default function Experience() {
                     </div>
                   </div>
                   <div
-                    className={`transition-all ease-out duration-300 max-h-fit ${
+                    className={`md:hidden lg:block transition-all ease-out duration-300 max-h-fit ${
                       cardHoverID === item.id
-                        ? "opacity-100 h-52 py-2 mt-3 border-t"
+                        ? "opacity-100 h-36 md:h-52 py-2 mt-3 border-t"
                         : "opacity-0 h-0"
                     }`}
                   >
@@ -143,6 +143,21 @@ export default function Experience() {
                       className={`flex flex-col gap-2 list-disc list-outside ${
                         cardHoverID === item.id ? "opacity-100 " : "opacity-0"
                       }`}
+                    >
+                      {item.description.map((point, idx) => {
+                        return (
+                          <li key={idx} className="ml-4">
+                            {point}
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </div>
+                  <div
+                    className={`hidden md:block lg:hidden transition-all ease-out duration-300 max-h-fit py-2 mt-3 border-t`}
+                  >
+                    <ul
+                      className={`flex flex-col gap-2 list-disc list-outside`}
                     >
                       {item.description.map((point, idx) => {
                         return (

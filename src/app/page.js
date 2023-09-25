@@ -10,7 +10,9 @@ export default function Home() {
   let year = new Date().getFullYear();
   return (
     <main className="">
-      <div className="grid grid-cols-1 grid-rows-auto md:grid-cols-5 lg:grid-cols-4 md:grid-rows-5 h-screen divide-x divide-y">
+      {/* <div className="grid lg:grid-cols-4 lg:h-screen divide-x divide-y"> */}
+      <div className="grid lg:grid grid-cols-1 grid-rows-auto lg:grid-cols-4 lg:grid-rows-5 lg:h-screen divide-x divide-y text-slate-500 text-sm lg:text-base">
+        {/* Main Grid - Row 1 */}
         {/* Main Grid - Row 1 */}
         <section
           className="col-span-1 row-span-1 md:col-span-3 md:row-span-1 grid items-center p-4"
@@ -23,35 +25,37 @@ export default function Home() {
             <h1 className="block lg:hidden text-black font-extrabold text-4xl/none tracking-tighter w-fit">
               Muhammad Ibrahim
             </h1>
-            <p className="text-slate-500 leading-none">
+            <p className="leading-none">
               A software engineer dedicated to producing code that is not only
               clean and efficient but also testable and scalable. 🙌
             </p>
           </div>
         </section>
 
-        <section
-          className="col-span-1 row-span-1 md:col-span-2 lg:col-span-1 md:row-span-1 flex flex-col gap-1 justify-center p-4"
-          id="about"
-        >
-          <ul className="text-slate-500 leading-5">
-            <li className="font-bold text-black">👉 Download My Resume</li>
+        {/* Main Grid - Row 2 - Tablet View */}
+        <div className="col-span-1 row-span-1 md:col-span-1 md:flex md:flex-col md:gap-1 justify-center p-4">
+          <ul className="leading-5">
+            <li className="font-bold text-black">
+              <a href="/resume.pdf" download={true}>
+                👉 Download My Resume
+              </a>
+            </li>
             <li>ibrahimaq99@gmail.com</li>
             <li>+92 312 3996083</li>
             <li>linkedin.com/in/ibrahimqureshi99</li>
           </ul>
-        </section>
+        </div>
 
         {/* Main Grid - Row 2 - Internal Grid */}
-        <div className="col-span-1 row-span-auto md:col-span-4 md:row-span-4 grid grid-cols-1 grid-rows-auto md:grid-cols-3 md:grid-rows-1 divide-x border-b">
+        <div className="col-span-1 row-span-auto md:col-span-5 lg:col-span-4 md:row-span-4 grid grid-cols-1 grid-rows-auto lg:grid-cols-3 md:grid-rows-1 divide-x border-b">
           <Experience />
           <Skills />
           <Projects />
         </div>
 
-        <div className="col-span-1 row-span-1 md:col-span-6 md:grid-cols-6">
+        <div className="col-span-1 row-span-1 md:col-span-4 md:grid-cols-6">
           <div className="items-center p-4">
-            <p className="text-slate-500 text-md">
+            <p className="text-md">
               {`Crafted with ❤️ and a whole lot of ☕️. Loosely designed on a sketchbook, developed with Next.js, Tailwind CSS, and VS Code. Deployed with Vercel. © Muhammad Ibrahim ${year} – All Rights Playful.`}
             </p>
           </div>
