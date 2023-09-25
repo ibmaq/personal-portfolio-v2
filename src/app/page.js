@@ -20,7 +20,9 @@ export default function Home() {
         >
           <div className="flex flex-col gap-4">
             <h1 className="hidden lg:block text-black font-extrabold text-4xl/none lg:text-7xl/none tracking-tighter w-fit">
-              Hi, I'm Muhammad Ibrahim 👋
+              Hi, I'm{" "}
+              <span className="hover:animate-pulse">Muhammad Ibrahim</span>
+              👋
             </h1>
             <h1 className="block lg:hidden text-black font-extrabold text-4xl/none tracking-tighter w-fit">
               Muhammad Ibrahim
