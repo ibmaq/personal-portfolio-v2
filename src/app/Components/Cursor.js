@@ -128,7 +128,7 @@ export default function Cursor() {
   return (
     <>
       <motion.div
-        className="hidden lg:block fixed top-0 left-0 h-4 w-4 rounded-full border-2 border-black pointer-events-none z-10"
+        className="hidden lg:block fixed top-0 left-0 h-4 w-4 rounded-full border-2 border-black dark:border-white pointer-events-none z-10"
         variants={cursorVariants}
         animate={cursorAnimation}
       />

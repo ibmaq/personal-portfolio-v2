@@ -22,7 +22,7 @@ export default function Contact() {
   return (
     <>
       <ul className="leading-5">
-        <li className="font-bold text-black">
+        <li className="font-bold text-slate-800 dark:text-slate-200 text-xl transition-all ease-in-out duration-300">
           <a href="/resume.pdf" download={true}>
             {/* 👉 */}
             <span

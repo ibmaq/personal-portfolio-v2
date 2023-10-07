@@ -6,13 +6,17 @@ import Experience from "./Components/Sections/Experience";
 import Skills from "./Components/Sections/Skills";
 import Projects from "./Components/Sections/Projects";
 import Contact from "./Components/Sections/Contact";
+import ThemeToggle from "./Components/ThemeToggle";
 
 export default function Home() {
   let year = new Date().getFullYear();
+  let theme = "light";
+  // let theme = "dark";
+
   return (
-    <main className="">
+    <main className={`${theme}`}>
       {/* <div className="grid lg:grid-cols-4 lg:h-screen divide-x divide-y"> */}
-      <div className="grid lg:grid grid-cols-1 grid-rows-auto lg:grid-cols-4 lg:grid-rows-5 lg:h-screen divide-x divide-y text-slate-500 text-sm lg:text-base">
+      <div className="grid lg:grid grid-cols-1 grid-rows-auto lg:grid-cols-4 lg:grid-rows-5 lg:h-screen divide-x divide-y text-slate-600 dark:text-slate-100 text-sm lg:text-base dark:bg-slate-950">
         {/* Main Grid - Row 1 */}
         <section
           id="about"
@@ -20,19 +24,21 @@ export default function Home() {
         >
           <div className="col-span-1 row-span-1 md:col-span-3 lg:col-span-3 md:row-span-1 grid items-center p-4">
             <div className="flex flex-col gap-4">
-              <h1 className="hidden lg:block text-black font-extrabold text-4xl/none lg:text-7xl/none tracking-tighter w-fit">
+              <h1 className="hidden lg:block text-neutral-900 dark:text-neutral-100 font-extrabold text-4xl/none lg:text-7xl/none tracking-tighter w-fit">
                 {`Hi, I'm `}
                 <span className="hover:animate-pulse hover:drop-shadow-md">
                   Muhammad Ibrahim
                 </span>
                 👋
               </h1>
-              <h1 className="block lg:hidden text-black font-extrabold text-4xl/none tracking-tighter w-fit">
+              <h1 className="block lg:hidden text-neutral-900 dark:text-neutral-100 font-extrabold text-4xl/none tracking-tighter w-fit">
                 Muhammad Ibrahim
               </h1>
-              <p>
-                A <b>software engineer</b> dedicated to producing code that is
-                not only clean and efficient but also testable and scalable.
+              <p className="dark:text-slate-200">
+                A{" "}
+                <b className="text-black dark:text-white">software engineer</b>{" "}
+                dedicated to producing code that is not only clean and efficient
+                but also testable and scalable.
               </p>
             </div>
           </div>
@@ -60,6 +66,8 @@ export default function Home() {
 
       {/* animated-cursor */}
       <Cursor />
+
+      <ThemeToggle />
     </main>
   );
 }

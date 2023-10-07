@@ -69,14 +69,14 @@ export default function Projects() {
   return (
     <section className="col-span-1 row-span-3 items-center overflow-auto">
       <div className="flex flex-col">
-        <h1 className="text-black font-bold lg:text-4xl text-3xl tracking-tighter sticky top-0 z-10 bg-white p-4 pt-6">
+        <h1 className="text-neutral-900 dark:text-neutral-100 font-bold lg:text-4xl text-3xl tracking-tighter sticky top-0 z-10 p-4 pt-6">
           Projects
         </h1>
         <ul className="flex flex-col gap-4 p-4 pt-2">
           {projectsData.map((item, idx) => {
             return (
               <li
-                className={`border relative bg-white rounded-lg ${
+                className={`border relative bg-neutral-100 dark:bg-slate-950 rounded-lg ${
                   cardHoverID === item.id && "scale-[1.02] shadow-lg"
                 } ${
                   cardHoverID !== item.id && cardHoverID !== -1 && "blur-[1px]"
@@ -87,7 +87,7 @@ export default function Projects() {
               >
                 <div className="flex flex-col gap-3 p-4">
                   <div className="flex items-center justify-between">
-                    <h1 className="text-black font-extrabold text-2xl tracking-tighter w-fit">
+                    <h1 className="text-neutral-700 dark:text-neutral-300 font-extrabold text-2xl tracking-tighter w-fit">
                       {item.title}
                     </h1>
                     <Link href={item.link} target="_blank">
@@ -113,7 +113,7 @@ export default function Projects() {
                       </div>
                     </Link>
                   </div>
-                  <p className="text-slate-500 text-sm tracking-tight">
+                  <p className="text-slate-800 dark:text-slate-200 text-sm tracking-tight">
                     {item.description}
                   </p>
                   {/* stack used */}

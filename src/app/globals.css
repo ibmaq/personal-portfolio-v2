@@ -44,8 +44,8 @@ body {
 /* Dark mode toggle */
 .dark-toggle-switch {
   position: relative;
-  width: 100px;
-  height: 35px;
+  width: 35px;
+  height: 70px;
   --light: #ffffff;
   --dark: #000000;
   --link: rgb(27, 129, 112);
@@ -55,7 +55,7 @@ body {
 .dark-switch-label {
   position: absolute;
   width: 100%;
-  height: 35px;
+  height: 70px;
   background-color: var(--dark);
   border-radius: 25px;
   cursor: pointer;
@@ -96,9 +96,9 @@ body {
 }
 
 .dark-checkbox:checked ~ .dark-slider::before {
-  -webkit-transform: translateX(50px);
-  -ms-transform: translateX(50px);
-  transform: translateX(50px);
+  -webkit-transform: translateY(20px);
+  -ms-transform: translateY(20px);
+  transform: translateY(20px);
   background-color: var(--dark);
   -webkit-box-shadow: none;
   box-shadow: none;

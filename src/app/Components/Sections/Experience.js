@@ -75,18 +75,14 @@ export default function Experience() {
   return (
     <section className="md:col-span-1 md:row-span-3 items-center lg:overflow-y-auto text-slate-500">
       <div className="flex flex-col">
-        <h1 className="text-black font-bold lg:text-4xl text-3xl tracking-tighter sticky top-0 z-10 bg-white p-4 pt-6">
+        <h1 className="text-neutral-900 dark:text-neutral-100 font-bold lg:text-4xl text-3xl tracking-tighter sticky top-0 z-10 p-4 pt-6">
           Experience
         </h1>
         <ul className="flex flex-col md:flex-row md:flex-wrap lg:flex-nowrap lg:flex-col gap-4 p-4 pt-2">
           {experienceData.map((item, idx) => {
             return (
               <li
-                className={`border hover:border-black/40 relative bg-white rounded-lg ${
-                  cardHoverID === item.id
-                    ? "scale-[1.02] shadow-md"
-                    : "scale-100"
-                } transition-all ease-in-out duration-300 w-full md:w-[calc(50%-1rem)] lg:w-full`}
+                className={`border hover:border-black/40 dark:hover:border-white/40 relative bg-neutral-50 dark:bg-slate-950 rounded-lg transition-all ease-in-out duration-300 w-full md:w-[calc(50%-1rem)] lg:w-full`}
                 key={idx}
               >
                 {/* onPointerEnter={() => setCardHoverID(item.id)}
@@ -94,13 +90,13 @@ export default function Experience() {
                 <div className="flex flex-col p-4">
                   <div className="flex items-center justify-between">
                     <div className="flex flex-col gap-2">
-                      <h1 className="text-black font-extrabold text-2xl tracking-tighter w-fit">
+                      <h1 className="text-neutral-700 dark:text-neutral-300 font-extrabold text-2xl tracking-tighter w-fit">
                         {item.title}
                       </h1>
                       <div className="w-full flex justify-between">
-                        <p className="text-slate-800 text-sm font-medium tracking-tighter">
+                        <p className="text-slate-800 dark:text-slate-200 text-sm font-medium tracking-tighter">
                           {item.company} —{" "}
-                          <span className="text-slate-500 text-sm tracking-tighter">
+                          <span className="text-slate-600 dark:text-slate-400 text-sm tracking-tighter">
                             {item.duration}
                           </span>
                         </p>
