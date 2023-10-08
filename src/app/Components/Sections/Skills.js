@@ -21,6 +21,7 @@ export default function Skills() {
         "Tailwind CSS",
         "Bootstrap",
         "Material UI",
+        "Typescript",
       ],
     },
     {
@@ -57,7 +58,7 @@ export default function Skills() {
   return (
     <section className="md:col-span-1 md:row-span-3 items-center md:overflow-auto">
       <div className="flex flex-col">
-        <h1 className="text-black font-bold lg:text-4xl text-3xl tracking-tighter sticky top-0 z-10 bg-white p-4 pt-6">
+        <h1 className="text-neutral-900 dark:text-neutral-100 font-bold lg:text-4xl text-3xl tracking-tighter sticky top-0 z-10 p-4 pt-6">
           Skills
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-2 gap-4 p-4 pt-2 h-fit max-h-fit">
@@ -65,7 +66,7 @@ export default function Skills() {
             return (
               <div
                 key={idx}
-                className="text-black border border-transparent hover:border-black/30 rounded-lg p-4 shadow-md hover:shadow-none transition-all ease-in-out duration-300"
+                className="text-slate-800 dark:text-slate-200 border border-transparent hover:border-black/30 dark:hover:border-white/30 rounded-lg p-4 shadow-md hover:shadow-none transition-all ease-in-out duration-300 bg-neutral-100 dark:bg-slate-900"
               >
                 <h2 className="font-bold">{item.category}</h2>
                 <ul className="list-disc list-outside">

@@ -1,7 +1,5 @@
 "use client";
 
-import Image from "next/image";
-import Button from "../Button";
 import { useState } from "react";
 import { useCursorContext } from "@/app/CursorContext";
 import Link from "next/link";
@@ -24,7 +22,7 @@ export default function Contact() {
   return (
     <>
       <ul className="leading-5">
-        <li className="font-bold text-black">
+        <li className="font-bold text-slate-800 dark:text-slate-200 text-xl transition-all ease-in-out duration-300">
           <a href="/resume.pdf" download={true}>
             {/* 👉 */}
             <span
@@ -36,9 +34,20 @@ export default function Contact() {
             </span>
           </a>
         </li>
-        <li>ibrahimaq99@gmail.com</li>
-        <li>+92 312 3996083</li>
-        <li>linkedin.com/in/ibrahimqureshi99</li>
+        <li>
+          <a href="mailto:ibrahimaq99@gmail.com">ibrahimaq99@gmail.com</a>
+        </li>
+        <li>
+          <a href="tel:+923123996083">+92 312 3996083</a>
+        </li>
+        <li>
+          <a
+            href="https://www.linkedin.com/in/ibrahimqureshi99/"
+            target="_blank"
+          >
+            linkedin.com/in/ibrahimqureshi99
+          </a>
+        </li>
       </ul>
     </>
   );
