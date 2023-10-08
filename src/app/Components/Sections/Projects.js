@@ -76,7 +76,7 @@ export default function Projects() {
           {projectsData.map((item, idx) => {
             return (
               <li
-                className={`border relative bg-neutral-100 dark:bg-slate-950 rounded-lg ${
+                className={`border relative bg-neutral-50 dark:bg-slate-950 rounded-lg ${
                   cardHoverID === item.id && "scale-[1.02] shadow-lg"
                 } ${
                   cardHoverID !== item.id && cardHoverID !== -1 && "blur-[1px]"
