@@ -66,7 +66,7 @@ export default function Skills() {
             return (
               <div
                 key={idx}
-                className="text-slate-800 dark:text-slate-200 border border-transparent hover:border-black/30 dark:hover:border-white/30 rounded-lg p-4 shadow-md hover:shadow-none transition-all ease-in-out duration-300 bg-neutral-100 dark:bg-slate-900"
+                className="text-slate-800 dark:text-slate-200 border border-transparent hover:border-black/30 dark:hover:border-white/30 rounded-lg p-4 shadow-md hover:shadow-none transition-all ease-in-out duration-300 bg-neutral-50 dark:bg-slate-900"
               >
                 <h2 className="font-bold">{item.category}</h2>
                 <ul className="list-disc list-outside">
