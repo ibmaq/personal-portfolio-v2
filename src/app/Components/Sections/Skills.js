@@ -3,7 +3,6 @@
 import Image from "next/image";
 import Button from "../Button";
 import { useState } from "react";
-import { useCursorContext } from "@/app/CursorContext";
 
 export default function Skills() {
   const [cardHoverID, setCardHoverID] = useState(-1);
@@ -46,15 +45,6 @@ export default function Skills() {
     },
   ];
   const [selectedProjectId, setSelectedProjectId] = useState(-1);
-  const { setCursorAnimType } = useCursorContext();
-  const expandCursor = (e) => {
-    e.preventDefault();
-    setCursorAnimType("expand");
-  };
-  const defaultCursor = (e) => {
-    e.preventDefault();
-    setCursorAnimType("default");
-  };
   return (
     <section className="md:col-span-1 md:row-span-3 items-center md:overflow-auto">
       <div className="flex flex-col">
@@ -114,8 +104,6 @@ export default function Skills() {
                           selectedProjectId === item.id ? null : item.id
                         )
                       }
-                      onMouseEnter={expandCursor}
-                      onMouseLeave={defaultCursor}
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"

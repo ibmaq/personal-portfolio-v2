@@ -3,7 +3,6 @@
 import Image from "next/image";
 import Button from "../Button";
 import { useState } from "react";
-import { useCursorContext } from "@/app/CursorContext";
 import Link from "next/link";
 
 export default function Projects() {
@@ -57,15 +56,6 @@ export default function Projects() {
     // },
   ];
   const [selectedProjectId, setSelectedProjectId] = useState(-1);
-  const { setCursorAnimType } = useCursorContext();
-  const expandInvertCursor = (e) => {
-    e.preventDefault();
-    setCursorAnimType("expandInvert");
-  };
-  const defaultCursor = (e) => {
-    e.preventDefault();
-    setCursorAnimType("default");
-  };
   return (
     <section className="col-span-1 row-span-3 items-center overflow-auto">
       <div className="flex flex-col">
@@ -91,11 +81,7 @@ export default function Projects() {
                       {item.title}
                     </h1>
                     <Link href={item.link} target="_blank">
-                      <div
-                        className="h-8 w-8"
-                        onMouseEnter={expandInvertCursor}
-                        onMouseLeave={defaultCursor}
-                      >
+                      <div className="h-8 w-8">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 20 20"

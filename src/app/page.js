@@ -48,7 +48,7 @@ export default function Home() {
           id="about"
           className="col-span-1 md:col-span-4 row-span-1 grid grid-cols-1 md:grid-cols-5 lg:grid-cols-4 md:divide-x"
         >
-          <div className="col-span-1 row-span-1 md:col-span-3 lg:col-span-3 md:row-span-1 grid items-center p-4">
+          <div className="col-span-1 row-span-1 md:col-span-3 lg:col-span-3 md:row-span-1 grid items-center p-4 select-none">
             <div className="flex flex-col gap-4">
               <h1 className="hidden lg:block text-neutral-900 dark:text-neutral-100 font-extrabold text-4xl/none lg:text-7xl/none tracking-tighter w-fit">
                 {`Hi, I'm `}
@@ -75,7 +75,7 @@ export default function Home() {
         </section>
 
         {/* Main Grid - Row 2 - Internal Grid */}
-        <div className="col-span-1 row-span-auto md:col-span-5 lg:col-span-4 md:row-span-4 grid grid-cols-1 grid-rows-auto lg:grid-cols-3 md:grid-rows-1 md:divide-x border-b">
+        <div className="col-span-1 row-span-auto md:col-span-5 lg:col-span-4 md:row-span-4 grid grid-cols-1 grid-rows-auto lg:grid-cols-3 md:grid-rows-1 md:divide-x border-b select-none">
           <Experience />
           <Skills />
           <Projects />
@@ -90,11 +90,8 @@ export default function Home() {
         </div>
       </div>
 
-      {/* animated-cursor */}
-      <Cursor />
-
       {/* <ThemeToggle /> */}
-      <div className="fixed top-36 md:top-7 lg:top-16 right-2 md:right-1 lg:opacity-60 hover:opacity-100 transition-all ease-in-out duration-700 border-2 border-black dark:border-white rounded-2xl bg-black dark:bg-slate-900 md:scale-75 hover:scale-105">
+      <div className="fixed top-36 md:top-7 lg:top-16 right-2 md:right-1 lg:opacity-60 hover:opacity-100 transition-all ease-in-out duration-700 border-2 border-black dark:border-white rounded-2xl bg-black dark:bg-slate-900 md:scale-75 hover:scale-105 z-20">
         <div className="dark-toggle-switch">
           <label className="dark-switch-label">
             <input

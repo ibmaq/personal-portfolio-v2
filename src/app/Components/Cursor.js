@@ -93,6 +93,15 @@ export default function Cursor() {
       mixBlendMode: "difference",
       transition: { type: "linear", duration: 0.05 },
     },
+    expandInvert2: {
+      x: mousePos.x - 10,
+      y: mousePos.y - 10,
+      border: "3px solid #bae6fd",
+      backgroundColor: "#bae6fd",
+      mixBlendMode: "difference",
+      scale: 1.5,
+      transition: { type: "linear", duration: 0.05 },
+    },
     resume: {
       x: mousePos.x - 10,
       y: mousePos.y - 10,
@@ -133,7 +142,7 @@ export default function Cursor() {
         animate={cursorAnimation}
       />
       <motion.div
-        className="hidden lg:block fixed -top-3 -left-3 h-10 w-10 rounded-full border-2 border-slate-500  pointer-events-none z-10"
+        className="hidden lg:block fixed -top-3 -left-3 h-10 w-10 rounded-full border-2 border-slate-500   pointer-events-none z-10"
         variants={secondCursorVariants}
         animate={cursorAnimation}
       />
