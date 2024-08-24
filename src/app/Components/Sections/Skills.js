@@ -28,8 +28,12 @@ export default function Skills() {
       skills: ["Node.js", "Express.js", "MongoDB"],
     },
     {
-      category: "Cloud Services",
-      skills: ["AWS (Amazon Web Services)", "Firebase/Google Cloud Platform"],
+      category: "Cloud Services/DevOps",
+      skills: [
+        "Docker",
+        "AWS (Amazon Web Services)",
+        "Firebase/Google Cloud Platform",
+      ],
     },
     {
       category: "Additional Skills",
