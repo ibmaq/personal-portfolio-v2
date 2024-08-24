@@ -39,14 +39,14 @@ export default function Contact() {
           >
             <div className="flex flex-col gap-4">
               <a
-                href="/resume.pdf"
+                href="/Resume-Muhammad_Ibrahim_Frontend_Dev.pdf"
                 download={true}
                 className="text-lg bg-slate-300 hover:bg-slate-400 dark:bg-slate-700 dark:hover:bg-slate-500 text-center p-2 rounded-2xl transition-all ease-out duration-300"
               >
                 Download Resume
               </a>
               <a
-                href="/resume.pdf"
+                href="/Europa_CV_Muhammad_Ibrahim_Frontend_Dev.pdf"
                 download={true}
                 className="text-lg bg-slate-300 hover:bg-slate-400 dark:bg-slate-700 dark:hover:bg-slate-500 text-center p-2 rounded-2xl transition-all ease-out duration-300"
               >
@@ -84,6 +84,14 @@ export default function Contact() {
             target="_blank"
           >
             linkedin.com/in/ibrahimqureshi99
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            href="https://europa.eu/europass/eportfolio/api/eprofile/shared-profile/muhammad-ibrahim/2b29622a-2728-4f5a-806f-1ba202e8a7b4?view=html"
+          >
+            Visit my Europass profile
           </a>
         </li>
       </ul>
