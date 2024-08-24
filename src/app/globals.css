@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-  cursor: none;
-}
-
 /* :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -95,6 +91,65 @@ body {
   -webkit-transform: translateY(30px);
   -ms-transform: translateY(30px);
   transform: translateY(30px);
+  background-color: var(--dark);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+/* Dark mode toggle - mobile */
+.dark-toggle-switch-sm {
+  position: relative;
+  width: 65px;
+  height: 34px;
+  --light: #ffffff;
+  --dark: #0f172a;
+  --link: rgb(27, 129, 112);
+  --link-hover: rgb(24, 94, 82);
+}
+
+.dark-switch-label-sm {
+  position: absolute;
+  width: 100%;
+  height: 32px;
+}
+
+.dark-checkbox-sm {
+  position: absolute;
+  display: none;
+}
+
+.dark-slider-sm {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.dark-checkbox-sm:checked ~ .dark-slider-sm {
+  background-color: var(--light);
+}
+
+.dark-slider-sm::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 3px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  -webkit-box-shadow: inset 12px -4px 0px 0px var(--light);
+  box-shadow: inset 7px -4px 0px 0px var(--light);
+  background-color: var(--dark);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.dark-checkbox-sm:checked ~ .dark-slider-sm::before {
+  -webkit-transform: translateX(30px);
+  -ms-transform: translateX(30px);
+  transform: translateX(30px);
   background-color: var(--dark);
   -webkit-box-shadow: none;
   box-shadow: none;
