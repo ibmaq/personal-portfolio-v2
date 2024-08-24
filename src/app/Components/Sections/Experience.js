@@ -168,7 +168,7 @@ export default function Experience() {
                   <div
                     className={`transition-all ease-out duration-300 overflow-hidden border-t ${
                       cardHoverID === item.id
-                        ? "max-h-screen  pt-2 mt-3"
+                        ? "max-h-screen pt-2 mt-3"
                         : "max-h-0"
                     }`}
                     style={{
