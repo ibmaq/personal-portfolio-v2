@@ -1,15 +1,8 @@
 "use client";
 
-import Image from "next/image";
-import Button from "../Button";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Skills() {
-  const [cardHoverID, setCardHoverID] = useState(-1);
-  const [stackHover, setStackHover] = useState({
-    cardID: -1,
-    pillID: -1,
-  });
   const skillsData = [
     {
       category: "Frontend",
@@ -48,11 +41,40 @@ export default function Skills() {
       skills: ["REST APIs"],
     },
   ];
-  const [selectedProjectId, setSelectedProjectId] = useState(-1);
+  const [isScrolled, setIsScrolled] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      const section = document.querySelector("#skills-section");
+      if (section) {
+        setIsScrolled(section.scrollTop > 0);
+      }
+    };
+
+    const section = document.querySelector("#skills-section");
+    if (section) {
+      section.addEventListener("scroll", handleScroll);
+    }
+
+    return () => {
+      if (section) {
+        section.removeEventListener("scroll", handleScroll);
+      }
+    };
+  }, []);
   return (
-    <section className="md:col-span-1 md:row-span-3 items-center md:overflow-auto">
+    <section
+      className="md:col-span-1 md:row-span-3 items-center md:overflow-auto"
+      id="skills-section"
+    >
       <div className="flex flex-col">
-        <h1 className="text-neutral-900 dark:text-neutral-100 font-bold lg:text-4xl text-3xl tracking-tighter sticky top-0 z-10 p-4 pt-6">
+        <h1
+          className={`text-neutral-900 dark:text-neutral-100 font-bold lg:text-4xl text-3xl tracking-tighter sticky top-0 z-10 p-4 pt-6 transition-all ease-in-out duration-300 ${
+            isScrolled
+              ? "opacity-100 shadow-md shadow-slate-200 dark:shadow-slate-800 bg-white dark:bg-slate-950 border border-b-black"
+              : "bg-[#f5f5f5] dark:bg-slate-950"
+          }`}
+          id="skills-heading"
+        >
           Skills
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-2 gap-4 p-4 pt-2 h-fit max-h-fit">
