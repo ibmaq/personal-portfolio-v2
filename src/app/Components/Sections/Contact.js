@@ -7,10 +7,20 @@ export default function Contact() {
   return (
     <>
       <ul className="leading-5 ">
-        <li className="hidden sm:block font-bold text-slate-800 dark:text-slate-200 text-2xl pb-4 relative">
+        <li className="font-bold text-slate-800 dark:text-slate-200 text-2xl pb-4 relative">
+          {/* For Mobile Views */}
           <div
             onClick={() => setShowDownloadModal(!showDownloadModal)}
-            className="flex gap-1 items-center cursor-pointer select-none"
+            className="flex sm:hidden gap-1 items-center cursor-pointer select-none"
+          >
+            <span className="w-full border border-white rounded-xl p-2 text-center">
+              Download My Resume
+            </span>
+          </div>
+          {/* For Other Views */}
+          <div
+            onClick={() => setShowDownloadModal(!showDownloadModal)}
+            className="hidden sm:flex gap-1 items-center cursor-pointer select-none"
           >
             <span className="hover:bg-gradient-to-r hover:from-indigo-500 hover:via-purple-500 hover:to-pink-500 transition duration-300 ease-in-out hover:text-transparent hover:bg-clip-text">
               Download My Resume
