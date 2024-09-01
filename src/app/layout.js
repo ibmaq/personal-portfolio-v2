@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
+  metadataBase: new URL("https://muhammadibrahim.com"),
   title: "Frontend Developer - JavaScript, React, Vue, TailwindCSS | Ibrahim",
   description:
     "Experienced Frontend Developer specializing in JavaScript, React, Vue, and TailwindCSS. Check out my portfolio!",
